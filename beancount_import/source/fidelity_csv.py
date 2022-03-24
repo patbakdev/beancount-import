@@ -1721,6 +1721,8 @@ def _convert_action(raw: str) -> Union[BrokerageAction, BankingEntryType]:
             return BrokerageAction.BUY
         if second == "SOLD":
             return BrokerageAction.SELL
+    if first == "INTEREST":
+        return BankingEntryType.INTADJUST
     if first == "DIVIDEND":
         return BrokerageAction.CASH_DIVIDEND
     if first == "REINVESTMENT":
